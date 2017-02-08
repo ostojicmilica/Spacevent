@@ -1,0 +1,2119 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:700|Work+Sans:300,400,500');
+
+/*
+* shin one page portfolio theme;
+* version : 1.0;
+* © bdthemes;
+* ====== table of contents ======
+    01.General styles
+
+    02.Shortcodes
+    03.Navigation menu
+    04.Section Hero Carousel
+
+    05.Section About
+        05.01. Section Team 
+
+    06.Section Resume
+        06.01. Section Skills
+
+    07.Section Video
+    08.Section Latest Work
+
+    09.Section Portfolio
+        09.01.Section Testimonial
+
+    10.Section Contact
+    11.footer
+    12.Single Portfolio Page
+    13. Media Queries for Responisve Design
+*/
+
+/* ==================== 01. General Styles ==================== */
+
+html * {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+::-moz-selection {
+    color: #606060;
+    background-color: #ededed;
+}
+
+::selection {
+    color: #606060;
+    background-color: #ededed;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.4;
+    background-color: #fff;
+    color: #606060;
+}
+
+.page-wrapper {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+#preloader {
+    background-color: rgba(255, 255, 255, 1);
+    bottom: 0;
+    display: block;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 99999999999;
+}
+
+.site-spinner {
+    border: 2px solid #ddd;
+    font-size: 44px;
+    width: 44px;
+    height: 44px;
+    left: 50%;
+    top: 50%;
+    margin: -22px 0 0 -22px;
+    position: absolute;
+    text-align: center;
+    border-radius: 50%;
+    box-sizing: border-box;
+    -webkit-animation: site-spin 1s linear infinite;
+    -moz-animation: site-spin 1s linear infinite;
+    -o-animation: site-spin 1s linear infinite;
+    animation: site-spin 1s linear infinite;
+    border-top-color: #333;
+}
+
+a {
+    color: #77cde3;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    -o-transition: color 0.3s;
+    transition: color 0.3s;
+}
+
+a.link {
+    color: #606060;
+    text-decoration: none;
+}
+
+a.link:hover {
+    color: #77cde3;
+}
+
+a:hover {
+    color: #606060;
+    text-decoration: none;
+}
+
+a:focus {
+    color: #606060;
+    outline: none;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #606060;
+    line-height: 1.3
+}
+
+h1 {
+    font-size: 40px;
+    text-transform: none;
+    font-style: normal;
+    margin-bottom: 28px;
+}
+
+h2 {
+    font-size: 30px;
+    text-transform: none;
+    font-style: normal;
+    margin-bottom: 24px;
+}
+
+h3 {
+    font-size: 26px;
+    text-transform: none;
+    font-style: normal;
+    margin-bottom: 20px;
+}
+
+h4 {
+    font-size: 22px;
+    text-transform: none;
+    font-style: normal;
+    margin-bottom: 17px;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+h5,
+h6 {
+    text-transform: none;
+    font-style: normal;
+    margin-bottom: 12px;
+}
+
+h6 {
+    font-size: 16px;
+}
+
+p {
+    margin: 0 0 24px;
+}
+
+.btn {
+    display: inline-block;
+    font-size: 14px;
+    text-align: center;
+    white-space: normal;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    vertical-align: middle;
+    cursor: pointer;
+    font-weight: 500;
+    height: 48px;
+    padding: 0 22px;
+    line-height: 45px;
+    text-transform: uppercase;
+    border: 2px solid transparent;
+    background-color: #ededed;
+    color: #606060;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transition: color .3s ease-out, background-color .3s ease-out;
+    -moz-transition: color .3s ease-out, background-color .3s ease-out;
+    -o-transition: color .3s ease-out, background-color .3s ease-out;
+    transition: color .3s ease-out, background-color .3s ease-out;
+    margin: 10px 8px 0;
+    -webkit-tap-highlight-color: transparent;
+    border-radius: 7px;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0;
+}
+
+.btn.square {
+    border-radius: 0;
+}
+
+.btn.rounded {
+    border-radius: 25px;
+}
+
+.btn:hover {
+    color: #606060;
+    background-color: #d6d6d6;
+    border-color: transparent;
+}
+
+.btn:active,
+.btn:focus,
+.btn:active:focus {
+    background-color: #d6d6d6;
+    color: #606060;
+    outline: 0;
+    box-shadow: none;
+    border-color: transparent;
+    outline-offset: 0;
+}
+
+.btn-sm {
+    height: 36px;
+    line-height: 33px;
+    padding: 0 18px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #77ede3;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #51bfdb;
+}
+
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:active:focus {
+    background-color: #51bfdb;
+    color: #fff;
+    outline: 0;
+    box-shadow: none;
+    border-color: transparent;
+    outline-offset: 0;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #a7c04d;
+}
+
+.btn-success:hover {
+    color: #fff;
+    background-color: #8ea53a;
+}
+
+.btn-success:active,
+.btn-success:focus,
+.btn-success:active:focus {
+    background-color: #8ea53a;
+    color: #fff;
+    outline: 0;
+    box-shadow: none;
+    border-color: transparent;
+    outline-offset: 0;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #93c4ef;
+}
+
+.btn-info:hover {
+    color: #fff;
+    background-color: #6baee9;
+}
+
+.btn-info:active,
+.btn-info:focus,
+.btn-info:active:focus {
+    background-color: #6baee9;
+    color: #fff;
+    outline: 0;
+    box-shadow: none;
+    border-color: transparent;
+    outline-offset: 0;
+}
+
+.btn-warning {
+    color: #fff;
+    background-color: #ffce2b;
+}
+
+.btn-warning:hover {
+    color: #fff;
+    background-color: #fcc200;
+}
+
+.btn-warning:active,
+.btn-warning:focus,
+.btn-warning:active:focus {
+    background-color: #fcc200;
+    color: #fff;
+    outline: 0;
+    box-shadow: none;
+    border-color: transparent;
+    outline-offset: 0;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #ef0568;
+}
+
+.btn-danger:hover {
+    color: #fff;
+    background-color: #c20454;
+}
+
+.btn-danger:active,
+.btn-danger:focus,
+.btn-danger:active:focus {
+    background-color: #c20454;
+    color: #fff;
+    outline: 0;
+    box-shadow: none;
+    border-color: transparent;
+    outline-offset: 0;
+}
+
+.btn-border {
+    background-color: transparent;
+    border-color: #ededed;
+    color: #606060;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.btn-border:hover {
+    color: #606060;
+}
+
+.btn-border.btn-default {
+    color: #606060;
+    border-color: #ededed;
+}
+
+.btn-border.btn-default:hover {
+    background-color: #ededed;
+}
+
+.btn-border.btn-primary {
+    color: #51bfdb;
+    border-color: #51bfdb;
+}
+
+.btn-border.btn-primary:active,
+.btn-border.btn-primary:focus,
+.btn-border.btn-primary:active:focus,
+.btn-border.btn-primary:hover {
+    color: #fff;
+    background-color: #51bfdb;
+}
+
+.btn-border.btn-success {
+    color: #8ea53a;
+    border-color: #8ea53a
+}
+
+.btn-border.btn-success:active,
+.btn-border.btn-success:focus,
+.btn-border.btn-success:active:focus,
+.btn-border.btn-success:hover {
+    color: #fff;
+    background-color: #8ea53a
+}
+
+.btn-border.btn-info {
+    color: #6baee9;
+    border-color: #6baee9
+}
+
+.btn-border.btn-info:active,
+.btn-border.btn-info:focus,
+.btn-border.btn-info:active:focus,
+.btn-border.btn-info:hover {
+    color: #fff;
+    background-color: #6baee9
+}
+
+.btn-border.btn-warning {
+    color: #fcc200;
+    border-color: #fcc200;
+}
+
+.btn-border.btn-warning:active,
+.btn-border.btn-warning:focus,
+.btn-border.btn-warning:active:focus,
+.btn-border.btn-warning:hover {
+    color: #fff;
+    background-color: #ffce2b;
+}
+
+.btn-border.btn-danger {
+    color: #c20454;
+    border-color: #c20454
+}
+
+.btn-border.btn-danger:active,
+.btn-border.btn-danger:focus,
+.btn-border.btn-danger:active:focus,
+.btn-border.btn-danger:hover {
+    color: #fff;
+    background-color: #c20454
+}
+
+.btn-icon-left i,
+.btn-icon-right i {
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.btn.btn-icon-left i {
+    margin-right: 7px;
+}
+
+.btn.btn-icon-right i {
+    margin-left: 7px;
+}
+
+.single-icon {
+    font-size: 24px;
+    color: #fff;
+    background-color: #77cde3;
+    display: inline-block;
+    vertical-align: middle;
+    width: 36px;
+    height: 36px;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    text-decoration: none;
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    transition: background-color 0.3s
+}
+
+.single-icon.square {
+    border-radius: 0;
+}
+
+.single-icon.rounded {
+    border-radius: 50%;
+}
+
+.single-icon:hover {
+    background-color: #51bfdb;
+    color: #fff;
+}
+
+.social-icon {
+    color: #606060;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    -o-transition: color 0.3s;
+    transition: color 0.3s
+}
+
+.social-icon:hover {
+    color: #999;
+}
+
+.lead {
+    font-size: 18px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+blockquote {
+    display: block;
+    font-family: 'Work Sans', sans-serif;
+    position: relative;
+    padding: 12px 0 12px 25px;
+    margin: 0;
+    margin-bottom: 24px;
+    font-size: 18px;
+    text-transform: none;
+    font-weight: 300;
+    color: #333;
+    border-left: 5px solid #ededed;
+}
+
+blockquote p {
+    margin: 0;
+}
+
+hr {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    border-top: 1px solid #ededed;
+}
+
+
+/* ==================== 02.Shortcodes ==================== */
+
+.title {
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+
+.overlay {
+    position: relative;
+}
+
+.overlay:before {
+    top: 0;
+    left: 0;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #ededed;
+    opacity: 0.6
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-light {
+    font-weight: 300;
+}
+
+.text-bold {
+    font-weight: 500;
+}
+
+.text-sm {
+    font-size: 18px;
+}
+
+.text-xs {
+    font-size: 12px;
+}
+
+.sp-top-0 {
+    margin-top: 0;
+}
+
+.sp-top {
+    margin-top: 12px
+}
+
+.sp-top-1x {
+    margin-top: 24px;
+}
+
+.sp-top-2x {
+    margin-top: 48px;
+}
+
+.sp-top-3x {
+    margin-top: 72px;
+}
+
+.sp-bottom-0 {
+    margin-bottom: 0;
+}
+
+.sp-bottom {
+    margin-bottom: 12px
+}
+
+.sp-bottom-1x {
+    margin-bottom: 24px;
+}
+
+.sp-bottom-2x {
+    margin-bottom: 48px;
+}
+
+.sp-bottom-3x {
+    margin-bottom: 72px;
+}
+
+.pd-bottom-0 {
+    padding-bottom: 0;
+}
+
+.pd-bottom {
+    padding-bottom: 12px
+}
+
+.pd-bottom-1x {
+    padding-bottom: 24px
+}
+
+.pd-bottom-2x {
+    padding-bottom: 48px
+}
+
+.pd-bottom-3x {
+    padding-bottom: 72px;
+}
+
+.pd-top-0 {
+    padding-top: 0;
+}
+
+.pd-top {
+    padding-top: 12px
+}
+
+.pd-top-1x {
+    padding-top: 24px
+}
+
+.pd-top-2x {
+    padding-top: 48px
+}
+
+.pd-top-3x {
+    padding-top: 72px;
+}
+
+.inline {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.block {
+    display: block;
+}
+
+.pos-relative {
+    position: relative;
+}
+
+.pos-absolute {
+    position: absolute;
+}
+
+
+/* ==================== 03.Navigation menu ==================== */
+
+.navbar {
+    background-color: #fff;
+    border-radius: 0;
+    border: 0;
+    left: 0;
+    margin-bottom: 0;
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    
+}
+
+.navbar.navbar-fixed {
+    position: fixed;
+}
+
+.nav-container {
+    min-height: 80px;
+}
+
+
+.site-logo {
+    float: left;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    display: block;
+    padding: 24px 35px  23px 35px;
+    z-index: 101;
+    color: #606060;
+}
+
+
+
+.ham-menu-toggle {
+    display: block;
+    float: right;
+    padding: 23px 35px 22px 35px;
+    text-align: center;
+    z-index: 102;
+    color: #606060;
+}
+
+.ham-menu-toggle > i {
+    display: block;
+    font-size: 25px;
+    opacity: 1;
+    position: relative;
+    visibility: visible;
+    -webkit-transform: translateX(0) scale(1);
+    -moz-transform: translateX(0) scale(1);
+    -o-transform: translateX(0) scale(1);
+    transform: translateX(0) scale(1);
+    -webkit-transition: -webkit-transform 0.5s;
+    -moz-transition: -webkit-transform 0.5s;
+    -o-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+}
+
+.ham-menu-toggle:after {
+    content: "\F156";
+    font-family: "Material Design Icons";
+    font-size: 25px;
+    right: 60px;
+    opacity: 0;
+    position: absolute;
+    top: 22px;
+    visibility: hidden;
+    -webkit-transform: translateX(10px);
+    -moz-transform: translateX(10px);
+    -o-transform: translateX(10px);
+    transform: translateX(10px);
+    -webkit-transition: -webkit-transform 0.5s;
+    -moz-transition: -webkit-transform 0.5s;
+    -o-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+}
+
+.ham-menu-toggle.active > i {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translateX(5px);
+    transform: translateX(5px);
+}
+
+.ham-menu-toggle.active:after {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateX(0) scale(1);
+    -moz-transform: translateX(0) scale(1);
+    -o-transform: translateX(0) scale(1);
+    transform: translateX(0) scale(1);
+}
+
+.ham-menu-dropdown {
+    background-color: rgb(230, 229, 230);
+    height: 100%;
+    padding-top: 80px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 40%;
+    z-index: -1;
+    -webkit-transition: all 0.34s;
+    -moz-transition: all 0.34s;
+    -o-transition: all 0.34s;
+    transition: all 0.34s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.ham-menu-dropdown.open {
+    visibility: visible;
+    opacity: 1;
+}
+
+.dropdown-inner {
+    opacity: 0;
+    padding: 50px 40px;
+    visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    width: 100%;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.dropdown-inner.current {
+    -webkit-animation: slideLeft 1s;
+    -moz-animation: slideLeft 1s;
+    -o-animation: slideLeft 1s;
+    animation: slideLeft 1s;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: animation 0.4s;
+    -moz-transition: animation 0.4s;
+    -o-transition: animation 0.4s;
+    transition: animation 0.4s;
+}
+
+.dropdown-inner .main-menu {
+    list-style: none;
+    padding-left: 0;
+}
+
+.main-menu li {
+    margin-bottom: 6px;
+}
+
+.main-menu li > a {
+    font-size: 19px;
+    color: #606060;
+}
+
+.main-menu li > a.current {
+    color: #77cde3
+}
+
+
+/* ==================== 04.Section Hero Carousel ==================== */
+
+.hero-carousel {
+    margin-top: 80px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.hero-carousel .slide {
+    position: relative;
+    background-position: center center!important;
+    background-repeat: no-repeat!important;
+    background-size: cover!important;
+    display: block;
+    height: 900px;
+    width: 100%;
+}
+
+
+.slide-content {
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    top: 44%;
+}
+
+.banner-icon {
+    display: inline-block;
+    color: #606060;
+    font-size: 40px;
+    margin-top: 250px;
+    text-align: center;
+    -webkit-animation: bounce 3s infinite;
+    -moz-animation: bounce 3s infinite;
+    -o-animation: bounce 3s infinite;
+    animation: bounce 3s infinite;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+    opacity: 0.7;
+}
+
+.banner-icon:hover {
+    opacity: 1;
+}
+
+.hero-carousel .owl-carousel .owl-nav .owl-prev,
+.hero-carousel .owl-carousel .owl-nav .owl-next {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    background-color: #fff;
+    border-radius: 0;
+    color: #606060;
+    font-size: 20px;
+    height: 50px;
+    line-height: 50px;
+    margin-top: -20px;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    text-align: center;
+    top: 45%;
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 50px;
+}
+
+.hero-carousel .owl-carousel .owl-nav .owl-prev {
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    left: -30px;
+}
+
+.hero-carousel .owl-carousel .owl-nav .owl-next {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    right: -30px;
+}
+
+.hero-carousel:hover .owl-carousel .owl-nav .owl-prev {
+    opacity: 0.7;
+    visibility: visible;
+    left: 0;
+}
+
+.hero-carousel:hover .owl-carousel .owl-nav .owl-next {
+    visibility: visible;
+    opacity: 0.7;
+    right: 0;
+}
+
+.hero-carousel .owl-carousel .owl-nav .owl-prev:hover,
+.hero-carousel .owl-carousel .owl-nav .owl-next:hover {
+    opacity: 1;
+}
+
+.hero-carousel .owl-carousel .owl-dots {
+    position: absolute;
+    bottom: 35px;
+    width: 100%;
+    text-align: center;
+}
+
+.hero-carousel .owl-carousel .owl-dots .owl-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #606060;
+    margin: 0 5px;
+    border-radius: 50%;
+    opacity: 0.6;
+    -webkit-transition: opacity 0.4s;
+    -moz-transition: opacity 0.4s;
+    -o-transition: opacity 0.4s;
+    transition: opacity 0.4s
+}
+
+.hero-carousel .owl-carousel .owl-dots .owl-dot.active {
+    opacity: 1;
+}
+
+
+/* ==================== 05.Section About ==================== */
+
+.quotation {
+    display: table;
+    width: 100%;
+}
+
+
+.quotation-author {
+    display: table-cell;
+    vertical-align: top;
+    padding-right: 24px;
+}
+
+.quotation-author-avatar {
+    width: 74px;
+}
+
+.quotation-author-avatar img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+.quotation-author-name {
+    display: block;
+    font-size: 14px;
+    color: #999;
+    font-weight: normal;
+    font-style: normal;
+    margin-top: 9px
+}
+
+.quotation-author-name:before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    vertical-align: middle;
+    background-color: #999;
+    margin-right: 9px;
+}
+
+.quotation blockquote {
+    display: table-cell;
+    vertical-align: top;
+    padding-top: 0;
+}
+
+
+/* ==================== 05.01. Section Team ==================== */
+
+.team-member {
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto 30px auto;
+    text-align: center;
+}
+
+.team-member .team-thumb {
+    width: 100%;
+    position: relative;
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+.team-thumb > img {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+    display: block;
+    width: 100%;
+    height: auto;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.team-thumb .social {
+    background-color: #606060;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+    -webkit-transition: all 0.5s;
+    -mox-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+
+.team-thumb .social .social-inner {
+    margin-top: 45%;
+}
+
+.social-inner .social-icon {
+    font-size: 18px;
+    color: #fff;
+}
+
+.team-member:hover .team-thumb > img {
+    opacity: 0.5;
+}
+
+.team-member:hover .team-thumb .social {
+    opacity: 0.7;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.team-member .team-name {
+    font-size: 16px;
+    margin-bottom: 6px;
+    font-weight: 400;
+}
+
+.team-member .team-pos {
+    margin-bottom: 24px;
+    color: #999;
+    font-size: 14px;
+    text-transform: lowercase;
+}
+
+
+/* ==================== 06.Section Resume ==================== */
+
+.resume-right:before {
+    content: '';
+    background-color: #999;
+    height: calc(100% + 43px);
+    width: 2px;
+    position: absolute;
+    left: -20px;
+    top: 26px;
+}
+
+.resume-right h4:before {
+    content: "\F134";
+    position: absolute;
+    top: 4px;
+    left: -30px;
+    font-family: "Material Design Icons";
+    color: #999;
+}
+
+.last-line .resume-right:before {
+    height: calc(100% - 38px);
+}
+
+
+/* ==================== 06.01. Section Skills ==================== */
+
+.skillbar {
+    margin-bottom: 24px;
+    position: relative;
+    width: 100%;
+    display: block;
+}
+
+.skillbar .skillbar-title {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.skillbar .skillbar-percent {
+    float: right;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.skillbar-bar {
+    background-color: #ededed;
+    width: 100%;
+    height: 5px;
+}
+
+.skillbar-bar .skillbar-child {
+    width: 0;
+    height: 100%;
+    background-color: #606060;
+    -webkit-transition-property: width, background-color;
+    -moz-transition-property: width, background-color;
+    -o-transition-property: width, background-color;
+    transition-property: width, background-color;
+}
+
+
+/* ==================== 07.Section Video ==================== */
+
+.video-popup-section {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    background-size: cover;
+    width: 100%;
+    background-image: url(../img/video_bg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat
+}
+
+.video-popup-btn {
+    display: inline-block;
+    width: 110px;
+    height: 110px;
+    color: #606060;
+    border: 1px solid #606060;
+    border-radius: 50%;
+    text-align: center;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    -o-transition: color 0.3s;
+    transition: color 0.3s;
+}
+
+.video-popup-btn i {
+    font-size: 44px;
+    line-height: 108px;
+}
+
+.video-popup-btn:hover {
+    color: #999;
+    border-color: #999;
+}
+
+
+/* ==================== magnifiq popup ==================== */
+
+.mfp-fade.mfp-wrap .mfp-content {
+    opacity: 0;
+    -webkit-transform: scale(.7);
+    -moz-transform: scale(.7);
+    -o-transform: scale(.7);
+    transform: scale(.7);
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out
+}
+
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1)
+}
+
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+    opacity: 0;
+    -webkit-transform: scale(.7);
+    -moz-transform: scale(.7);
+    -o-transform: scale(.7);
+    transform: scale(.7)
+}
+
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-bg {
+    opacity: 0;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out
+}
+
+.mfp-with-zoom.mfp-ready .mfp-container {
+    opacity: 1;
+}
+
+.mfp-with-zoom.mfp-ready.mfp-bg {
+    opacity: .8;
+}
+
+.mfp-with-zoom.mfp-removing .mfp-container,
+.mfp-with-zoom.mfp-removing.mfp-bg {
+    opacity: 0;
+}
+
+
+/* ==================== 08.Section Latest Work ==================== */
+
+.latest-work-carousel img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.latest-work-carousel ul {
+    padding-left: 26px;
+}
+
+.latest-work-carousel.owl-carousel .owl-dots {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.latest-work-carousel.owl-carousel .owl-dot {
+    display: inline-block;
+    vertical-align: middle;
+    width: 8px;
+    height: 8px;
+    margin: 0px 5px;
+    border-radius: 50%;
+    background: #606060;
+    border: 2px solid;
+    border-color: transparent;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
+
+.latest-work-carousel.owl-carousel .owl-dot.active {
+    background: #fff;
+    border: 2px solid #606060;
+    -webkit-transform: scale(1.4);
+    -moz-transform: scale(1.4);
+    -o-transform: scale(1.4);
+    transform: scale(1.4);
+}
+
+
+/* ==================== 09.Section Portfolio ==================== */
+
+
+.portfolio-filter {
+    display: block;
+    list-style: none;
+    font-size: inherit;
+    text-transform: uppercase;
+    padding-left: 15px;
+    margin: 0;
+}
+
+.portfolio-filter li {
+    display: inline-block;
+    margin: 0 22px 10px 0;
+}
+
+.portfolio-filter li a {
+    border-bottom: 1px solid transparent;
+    padding-bottom: 8px;
+    color: #999;
+}
+
+.portfolio-filter a.active {
+    color: #606060;
+    border-bottom-color: #606060;
+}
+
+.portfolio-filter li sup {
+    margin-left: 3px;
+    color: #999;
+}
+
+.portfolio-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.portfolio-container .portfolio-item {
+    width: 33.33333333%;
+    min-height: 1px;
+    padding: 15px;
+}
+
+.portfolio-thumb {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.portfolio-thumb img {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+	-webkit-transition: opacity 0.3s;
+	-moz-transition: opacity 0.3s;
+	-o-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+.portfolio-item:hover .portfolio-thumb img {
+	opacity: 0.5;
+}
+
+.portfolio-thumb .portfoli-caption {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.82);
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.portfolio-thumb .portfoli-caption .likes {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+.portfolio-thumb .portfoli-caption .info {
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.portfolio-item:hover .portfoli-caption {
+    visibility: visible;
+    opacity: 1;
+}
+
+.portfolio-item:hover .portfoli-caption .info {
+    bottom: 30px;
+}
+
+
+/* ==================== 09.01.Section Testimonial ==================== */
+
+
+.testimonial-carousel {
+    display: block;
+}
+
+.testimonial-slide {
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.testimonial-slide .lead {
+    font-size: 16px;
+}
+
+.testimonial-icon {
+    font-size: 35px;
+}
+
+.testimonial-carousel .owl-dots {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.testimonial-carousel .owl-dots .owl-dot {
+    display: inline-block;
+    vertical-align: middle;
+    width: 8px;
+    height: 8px;
+    margin: 0px 5px;
+    border-radius: 50%;
+    background: #606060;
+    border: 2px solid;
+    border-color: transparent;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.testimonial-carousel .owl-dots .owl-dot.active {
+    background: #fff;
+    border: 2px solid #606060;
+    -webkit-transform: scale(1.4);
+    -moz-transform: scale(1.4);
+    -o-transform: scale(1.4);
+    transform: scale(1.4);
+}
+
+
+/* ==================== 10.Section Contact ==================== */
+
+#google-map {
+    height: 500px;
+}
+
+
+.input-wrapper {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="radio"],
+input[type="checkbox"],
+input[type="password"],
+select,
+textarea,
+.form-control {
+    border-radius: 0;
+    display: block;
+    width: 100%;
+    height: 35px;
+    padding: 8px 0 16px;
+    text-transform: none;
+    box-shadow: none;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #999;
+    border-width: 0 0 2px 0;
+    border-style: solid;
+    border-color: #ededed;
+    background-color: #fff;
+    background-image: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+textarea {
+    height: auto;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus,
+.form-control:focus {
+    border-color: #77cde3;
+    color: #606060;
+    outline: 0;
+    box-shadow: none;
+}
+
+.contact-box {
+    padding-left: 0;
+    padding-right: 0;
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+.contact-box i {
+    display: inline;
+    vertical-align: -1px;
+    margin-right: 5px;
+}
+.contact-form .success-content,
+.contact-form .error-content {
+    display: none;
+}
+
+.contact-form .success-content i {
+    color: #5cb45d;
+    margin-right: 5px;
+}
+
+.contact-form .error-content i {
+    color: #f11;
+    margin-right: 5px;
+}
+
+
+/* ==================== 11.footer ==================== */
+
+.footer {
+    background-color: rgb(230, 229, 230);
+}
+
+.footer .social-icon {
+    margin-top: 0;
+}
+
+.footer-text-left {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.footer-text-right {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: right;
+}
+
+
+
+/* ==================== 12.Single Portfolio Page ==================== */
+.single-portfolio-preview {
+    position: relative;
+}   
+.single-portfolio-preview.overlay:before {
+    opacity: 0.8;
+}
+
+.single-portfolio-preview img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.single-portfoli-pagination {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 50px;
+    width: 100%;
+    background-color: rgb(230, 229, 230);
+    opacity: 0.9;
+    display: table;
+    table-layout: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+    z-index: 9999;
+}
+
+.single-portfoli-pagination > a {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 24px;
+    color: #606060;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.single-portfoli-pagination > a.prev {
+    text-align: left
+}
+
+.single-portfoli-pagination > a.next {
+     text-align: right;
+}
+
+.single-portfoli-pagination > a.home {
+    text-align: center;
+}
+
+.bg-image {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-height: 700px;
+}
+
+.single-portfolio-preview {
+    overflow: hidden;
+    position: relative;
+}
+
+.single-portfolio-preview .portfolio-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: left;
+    width: 100%;
+    height: 100%;
+}
+
+.portfolio-body {
+    text-align: center;
+    display: table;
+    width: 100%;
+    height: 100%;
+    table-layout: auto;
+}
+
+.portfoli-body-inner {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+span.meta a {
+    position: relative;
+    color: #606060;
+}
+
+span.meta a:hover {
+    color: #77cde3;
+}
+
+span.meta a:not(:last-child):after {
+    content: ",";
+}
+
+.nav-tabs-custom {
+    border-bottom: 2px solid #ededed;
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.nav-tabs-custom > li {
+    display: inline-block;
+    position: relative;
+    margin-bottom: -2px;
+}
+
+.nav-tabs-custom > li > a {
+    font-weight: 500;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 0;
+    display: block;
+    color: #999;
+    padding: 18px;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.nav-tabs-custom > li > a:hover {
+    color: #606060;
+    border-bottom: 2px solid #999;
+}
+
+.nav-tabs-custom>li.active>a,
+.nav-tabs-custom>li.active>a:hover,
+.nav-tabs-custom>li.active>a:focus {
+    color: #606060;
+    background-color: none;
+    border: none;
+    cursor: pointer;
+    border-bottom: 2px solid #606060;
+}
+
+.tab-content {
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.tab-content > .active {
+    animation: slideDown 1s;
+}
+
+.review-body {
+    display: table;
+    width: 100%;
+    padding: 33px 0;
+}
+
+.review-author-avatar {
+    width: 98px;
+    padding: 0 18px 18px 0;
+    display: table-cell;
+    vertical-align: top;
+}
+
+.review-content {
+    display: table-cell;
+    vertical-align: top;
+    width: auto;
+    margin-bottom: 12px;
+}
+
+.review-title {
+    display: table;
+    table-layout: auto;
+    width: 100%;
+}
+
+.column {
+    display: table-cell;
+    vertical-align: top;
+    width: 50%;
+}
+
+.column:last-child {
+    text-align: right;
+}
+
+span.rating {
+    color: #ffce2b;
+}
+
+.review-content p {
+    margin-bottom: 0;
+}
+
+.review-author-avatar img {
+    border-radius: 50%;
+    vertical-align: middle;
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.portfolio-thumb-alt {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.portfolio-thumb-alt > img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.portfolio-thumb-alt .portfoli-caption {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.portfolio-thumb-alt .portfoli-caption .icon img {
+    position: absolute;
+    z-index: 10;
+    display: block;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    margin: -25px 0 0 -25px;
+    border-radius: 50%;
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.28);
+    opacity: 0;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    -o-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+.portfolio-thumb-alt:hover > img {
+    opacity: .5;
+}
+
+.portfolio-thumb-alt:hover .portfoli-caption .icon img {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+}
+
+.portfolio-thumb-alt .portfoli-caption .likes {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+}
+
+.portfolio-thumb-alt .portfoli-caption .info {
+    position: absolute;
+    right: 30px;
+    bottom: 26px;
+}
+
+.portfolio-thumb-alt .column {
+    vertical-align: middle
+}
+
+
+/* ==================== 13. Media Queries for Responisve Designs ==================== */
+
+@media (max-width: 1120px) {
+    .hero-carousel .owl-carousel .owl-nav .owl-prev,
+    .hero-carousel .owl-carousel .owl-nav .owl-next {
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -o-backface-visibility: hidden;
+        backface-visibility: hidden;
+        background-color: transparent;
+        border-radius: 0;
+        color: #606060;
+        font-size: 20px;
+        height: 40px;
+        line-height: 40px;
+        margin-top: -20px;
+        margin: 0;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        text-align: center;
+        top: 45%;
+        -webkit-transition: opacity 0.3s;
+        -moz-transition: opacity 0.3s;
+        -o-transition: opacity 0.3s;
+        transition: opacity 0.3s;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        width: 40px;
+    }
+	
+    .hero-carousel:hover .owl-carousel .owl-nav .owl-prev {
+        left: -4px;
+    }
+	
+    .hero-carousel:hover .owl-carousel .owl-nav .owl-prev {
+        right: -25px;
+    }
+	
+}
+
+
+@media (max-width: 992px) {
+    .slide-content {
+        text-align: center;
+    }
+	
+    .portfolio-container .portfolio-item {
+        width: 50%;
+    }
+	
+    .similar-portfolio [class^="col-"] {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+	
+}
+
+
+@media (max-width: 768px) {
+    
+    .site-logo {
+        padding: 24px 2px  23px 2px;
+    }
+
+    .ham-menu-toggle {
+        padding: 23px 2px 22px 2px;
+    }
+    .ham-menu-toggle:after {
+       right: 30px;
+    }
+
+	.ham-menu-dropdown {
+        width: 100%;
+        text-align: left;
+    }
+	
+    .dropdown-inner {
+        padding: 50px;
+    }
+	
+    .dropdown-inner.current {
+        animation: slideDown 1s;
+    }
+	
+    .hero-carousel .slide {
+        height: 600px;
+    }
+	
+    .slide-content {
+        text-align: center;
+    }
+    
+    .overlay:before {
+        opacity: 0.8;
+    }
+    
+    .banner-icon {
+        margin-top: 100px;
+        font-size: 30px;
+    }
+	
+    .hero-carousel .owl-carousel .owl-dots {
+        bottom: 10px;
+    }
+	
+    .hero-carousel .owl-carousel .owl-nav .owl-prev,
+    .hero-carousel .owl-carousel .owl-nav .owl-next {
+        display: none;
+    }
+    
+    .latest-work-carousel .latest-work-carousel-inner img {
+        width: 100%;
+        max-width : 600px;
+        margin: 0 auto;
+    } 
+	
+    .portfolio-container .portfolio-item {
+        width: 50%;
+    }
+	
+    .resume-right:before,
+    .last-line .resume-right:before {
+        display: none
+    }
+	
+    .resume-right h4:before {
+        display: none
+    }
+	
+    .similar-portfolio [class^="col-"] {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+     .footer-text-left {
+        text-align: center;
+    }
+	
+    .footer-text-right {
+        text-align: center;
+    }
+	
+    .single-portfolio-preview {
+        min-height: 500px;
+    }
+	
+    .single-portfolio-preview img {
+        width: auto;
+    }
+	
+    .single-portfolio-preview .bg-image {
+        min-height: 500px;
+    }
+    
+    .portfolio-thumb img {
+        width: 100%;
+        max-width: 600px;
+        margin: auto;
+    }
+	
+}
+
+@media (max-width: 480px) {
+    blockquote {
+        border-left: 2px solid #ededed;;
+    }
+    .team-member {
+        max-width: 400px;
+    }
+    .resume-right:before,
+    .last-line .resume-right:before {
+        display: none;
+    }
+	
+    .portfolio-filter {
+        padding-left: 15;
+        padding-right: 15;
+    }
+	
+    .portfolio-filter li {
+        margin: 0 0 0 6px;
+    }
+	
+    .portfolio-filter li a {
+        border-bottom: none;
+       padding-bottom: 8px;
+    }
+	
+    .portfolio-filter li sup {
+        display: none;
+    }
+    .portfolio-container .portfolio-item {
+        width: 100%;
+    }
+    .similar-portfolio [class^="col-"] {
+        padding-top: 0;
+        padding-bottom: 15px;
+    }
+}
+
